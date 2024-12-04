@@ -21,7 +21,7 @@ const GamePage = () => {
       console.log(message);
       switch (message.type) {
         case INIT_GAME:
-          setChess(new Chess());
+          // setChess(new Chess());
           setBoard(chess.board());
           console.log("game initialized");
           break;
@@ -44,7 +44,7 @@ const GamePage = () => {
         <div className="grid grid-cols-4">
           {/* board  */}
           <div className="col-span-3">
-            <ChessBoard board={board} socket={socket}/>
+            <ChessBoard board={board} chess={chess} setBoard={setBoard} socket={socket}/>
           </div>
           {/* side start btn  */}
           <div className="col-span-1 bg-[#262522] rounded-lg flex justify-center items-start">
